@@ -1,0 +1,15 @@
+# See https://docs.gitlab.com/omnibus/docker/#install-gitlab-using-docker-compose
+web:
+  image: 'gitlab/gitlab-ce:12.7.6-ce.0'
+  #restart: --TODO--
+  hostname: 'deploy-gitlab.localhost'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://deploy-gitlab.localhost'
+      # Add any other gitlab.rb configuration here, each on its own line
+  ports:
+    # TODO: EXPOSE web servers ports
+  volumes:
+    # TODO: mount volume /etc/gitlab
+    # TODO: mount volume /var/log/gitlab
+    # TODO: mount volume /var/opt/gitlab
